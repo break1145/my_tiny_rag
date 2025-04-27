@@ -12,6 +12,7 @@ class PineconeVS:
         self.index = None
         self.index_name = index_name
         self.pc = Pinecone(api_key=pinecone_api_key)
+        self.create_index(self.index_name, 1024)
 
     def create_index(self, index_name: str, dimension: int):
         if not self.pc.has_index(name=index_name):
@@ -36,3 +37,6 @@ class PineconeVS:
 
     def query(self, vector, top_k=2, include_metadata=True):
         return self.index.query(vector=vector, top_k=top_k, include_metadata=include_metadata)
+
+    def delete_index(self, name):
+        self.pc.delete_index(name=name)
