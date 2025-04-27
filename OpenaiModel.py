@@ -23,6 +23,17 @@ class OpenAIModel:
         )
         return completion.model_dump_json()
 
+    def get_response_with_fc(self, prompt: str, tools, tool_choice, messages=None):
+        completion = self.client.chat.completions.create(
+            model="qwen-plus",
+            # 此处以qwen-plus为例，可按需更换模型名称。模型列表：https://help.aliyun.com/zh/model-studio/getting-started/models
+            messages=[{"role": "user", "content": f"{prompt}"}] + messages if messages else [],
+            tool_choice=tool_choice,
+            tools=tools,
+        )
+        return completion.model_dump_json()
+
+
     def get_embedding_json(self, text, model="text-embedding-v3"):
         """ 返回一个 raw json str """
         text = text.replace("n", " ")
