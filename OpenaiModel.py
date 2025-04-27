@@ -32,3 +32,16 @@ class OpenAIModel:
         """ 返回单个query的embedding"""
         res = self.client.embeddings.create(model="text-embedding-v3", input=[text])
         return res.data[0].embedding
+
+    def get_embedding_batch(self, texts: list) -> list:
+        res = []
+        for text in texts:
+            vc_text = self.get_embedding_json(text)
+            vc_obj = json.loads(vc_text)
+            vc = vc_obj['data'][0]
+            res.append({
+                'values': vc['embedding'],
+                'id': vc_obj['id'],
+                'metadata': {'text': text}
+            })
+        return res
