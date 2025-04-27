@@ -24,40 +24,52 @@ def text_emb():
     vs.upsert_in_batch(vectors, 50)
 
 def query(q: str):
-    # question test
-    # ds = load_dataset("rag-datasets/rag-mini-wikipedia", "question-answer")
+    """
+    Given a question `q`, split it into sub-questions, retrieve matching results from vector store,
+    select the top 5 most frequent matches, and generate an answer using LLM based on these materials.
+    """
+
+    # Initialize models
     model = OpenAIModel()
     vs = PineconeVS('test-wiki')
-    querys = split_query_with_function_call(q)
-    print(querys)
+
+    # Step 1: Split the question into multiple queries
+    queries = split_query_with_function_call(q)
+    print(f"Split queries: {queries}")
+
+    # Step 2: Query the vector store and count match frequencies
     matches = {}
-    count = {}
-    for x in querys:
-        tmp = vs.query(
-            vector=model.get_one_embedding(x),
-            top_k=5,
-            include_metadata=True
-        )
-        for match in tmp['matches']:
-            matches[match['id']] = match
-            if match['id'] in count:
-                count[match['id']] = count[match['id']] + 1
-            else:
-                count[match['id']] = 1
+    match_counts = {}
 
-    sorted_items = sorted(count.items(), key=lambda x: x[1], reverse=True)
-    top_5_items = sorted_items[:5]
-    data = [matches[key] for key, _ in top_5_items]
-    print(data)
+    for query_part in queries:
+        embedding = model.get_one_embedding(query_part)
+        result = vs.query(vector=embedding, top_k=5, include_metadata=True)
 
+        for match in result['matches']:
+            match_id = match['id']
+            matches[match_id] = match
+            match_counts[match_id] = match_counts.get(match_id, 0) + 1
+
+    # Step 3: Sort matches by frequency and select top 5
+    top_match_ids = sorted(match_counts.items(), key=lambda item: item[1], reverse=True)[:5]
+    top_matches = [matches[match_id] for match_id, _ in top_match_ids]
+    print(f"Top matches: {top_matches}")
+
+    # Step 4: Build prompt for LLM
     prompt = f"""
-        you are now a useful assistant,answer the question below according to given materials correctly.
-        if you can't get relevant information from the given materials, reply "Ciallo, I can't answer the question yet."
-        question: {q},  
-        materials: {str(data)},
-        your answer: 
-        """
-    print(model.get_response(prompt=prompt))
+        You are now a helpful assistant. Answer the following question based on the provided materials.
+        If the materials do not contain relevant information, reply: "Ciallo, I can't answer the question yet."
+        
+        Question: {q}
+        
+        Materials: {top_matches}
+        
+        Your Answer:
+    """
+    # Step 5: Get and print LLM response
+    response = model.get_response(prompt=prompt)
+    print(response)
+
 
 if __name__ == '__main__':
 
