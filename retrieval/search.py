@@ -81,7 +81,7 @@ def split_query_with_function_call(query):
     generated_queries.append(query)
     return generated_queries
 
-
-original_query = "丁真的电子烟和王源的传统烟比起来哪个吸了肺痒痒？"
-result_queries = split_query_with_function_call(original_query)
-[print(x) for x in result_queries]
+#
+# original_query = "丁真的电子烟和王源的传统烟比起来哪个吸了肺痒痒？"
+# result_queries = split_query_with_function_call(original_query)
+# [print(x) for x in result_queries]
