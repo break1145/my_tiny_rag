@@ -26,7 +26,7 @@ def split_query(query):
 # try to use function call
 
 import json
-# 1. 定义 Function Schema (在代码中表示为字典或对象)
+# 1. 定义 Function Schema
 function_schema = {
   "name": "generate_query_variations",
   "description": "Generates multiple sub-queries or variations of the original query for vector matching.",
