@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a511a6e8-8455-4336-8a7b-69b245a1afb9" name="更改" comment="[init] 初始化项目&#10;[feat] 实现基本rag" />
+    <list default="true" id="a511a6e8-8455-4336-8a7b-69b245a1afb9" name="更改" comment="[fix] ai辅助优化代码结构">
+      <change afterPath="$PROJECT_DIR$/retrieval/query.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_1.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +17,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Jupyter Notebook" />
         <option value="Python Script" />
       </list>
     </option>
@@ -31,7 +36,14 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.VectorStore.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dataset.executor&quot;: &quot;Run&quot;,
+    &quot;Python.embedding.executor&quot;: &quot;Run&quot;,
+    &quot;Python.example.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.search.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sentence_splitter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_1.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
@@ -43,6 +55,60 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager" selected="Python.test_1">
+    <configuration name="embedding" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="my-tiny-rag" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/indexing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/indexing/embedding.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="my-tiny-rag" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test_1" />
+        <item itemvalue="Python.embedding" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -59,7 +125,12 @@
       <option name="presentableId" value="Default" />
       <updated>1745395353102</updated>
       <workItem from="1745395354149" duration="3423000" />
-      <workItem from="1745408134479" duration="1863000" />
+      <workItem from="1745408134479" duration="5201000" />
+      <workItem from="1745494144489" duration="38000" />
+      <workItem from="1745549555459" duration="1853000" />
+      <workItem from="1745725592087" duration="169000" />
+      <workItem from="1745737776442" duration="11676000" />
+      <workItem from="1745799213073" duration="456000" />
     </task>
     <task id="LOCAL-00001" summary="[init] 初始化项目&#10;[feat] 实现基本rag">
       <option name="closed" value="true" />
@@ -69,7 +140,87 @@
       <option name="project" value="LOCAL" />
       <updated>1745409838584</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="[fix] 修改代码结构">
+      <option name="closed" value="true" />
+      <created>1745411596460</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1745411596460</updated>
+    </task>
+    <task id="LOCAL-00003" summary="[feat] 包装embedding&#10;[fix]  修改代码结构">
+      <option name="closed" value="true" />
+      <created>1745739928603</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1745739928603</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[init] 导入测试数据集">
+      <option name="closed" value="true" />
+      <created>1745739952367</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745739952367</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[feat] 实现优化原始提问（拆分子问题）">
+      <option name="closed" value="true" />
+      <created>1745744387693</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745744387693</updated>
+    </task>
+    <task id="LOCAL-00006" summary="[feat] 包装删除index方法">
+      <option name="closed" value="true" />
+      <created>1745744410693</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1745744410693</updated>
+    </task>
+    <task id="LOCAL-00007" summary="[feat] 包装删除index方法">
+      <option name="closed" value="true" />
+      <created>1745744416298</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1745744416298</updated>
+    </task>
+    <task id="LOCAL-00008" summary="[feat] 用function call实现结构化输出">
+      <option name="closed" value="true" />
+      <created>1745745719659</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1745745719659</updated>
+    </task>
+    <task id="LOCAL-00009" summary="[feat] 用function call实现结构化输出">
+      <option name="closed" value="true" />
+      <created>1745745851945</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1745745851945</updated>
+    </task>
+    <task id="LOCAL-00010" summary="[feat] 实现 将问题拆分后匹配结果，取出现频率最高的5个数据，提供给llm">
+      <option name="closed" value="true" />
+      <created>1745749406637</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1745749406637</updated>
+    </task>
+    <task id="LOCAL-00011" summary="[fix] ai辅助优化代码结构">
+      <option name="closed" value="true" />
+      <created>1745749669525</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1745749669525</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,9 +228,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[init] 初始化项目&#10;[feat] 实现基本rag" />
-    <option name="LAST_COMMIT_MESSAGE" value="[init] 初始化项目&#10;[feat] 实现基本rag" />
+    <MESSAGE value="[fix] 修改代码结构" />
+    <MESSAGE value="[feat] 包装embedding&#10;[fix]  修改代码结构" />
+    <MESSAGE value="[init] 导入测试数据集" />
+    <MESSAGE value="[feat] 实现优化原始提问（拆分子问题）" />
+    <MESSAGE value="[feat] 包装删除index方法" />
+    <MESSAGE value="[feat] 用function call实现结构化输出" />
+    <MESSAGE value="[feat] 实现 将问题拆分后匹配结果，取出现频率最高的5个数据，提供给llm" />
+    <MESSAGE value="[fix] ai辅助优化代码结构" />
+    <option name="LAST_COMMIT_MESSAGE" value="[fix] ai辅助优化代码结构" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/my_tiny_rag$main.coverage" NAME="main 覆盖结果" MODIFIED="1745409505962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/my_tiny_rag$dataset.coverage" NAME="dataset 覆盖结果" MODIFIED="1745738315476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/my_tiny_rag$test_1.coverage" NAME="test_1 覆盖结果" MODIFIED="1745749613741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/my_tiny_rag$VectorStore.coverage" NAME="VectorStore 覆盖结果" MODIFIED="1745411442478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/my_tiny_rag$example.coverage" NAME="example 覆盖结果" MODIFIED="1745411467156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/my_tiny_rag$embedding.coverage" NAME="embedding 覆盖结果" MODIFIED="1745739558883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/indexing" />
+    <SUITE FILE_PATH="coverage/my_tiny_rag$search.coverage" NAME="search 覆盖结果" MODIFIED="1745745496800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/retrieval" />
+    <SUITE FILE_PATH="coverage/my_tiny_rag$sentence_splitter.coverage" NAME="sentence_splitter 覆盖结果" MODIFIED="1745739736396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/indexing" />
   </component>
 </project>
